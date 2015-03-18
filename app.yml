@@ -1,0 +1,11 @@
+!!com.taobao.tae.config.domain.Config
+disableIndexCache: false
+disableStackTrace: false
+fileEncoding: UTF-8
+index: /index.php
+requestCharset: UTF-8
+responseCharset: UTF-8
+title: thinkphp-for-tae demo
+urls:
+- handler: /index.php
+  url: /

@@ -1,0 +1,41 @@
+{include file="../Public/header.html"}
+
+<br/>
+上面是头部
+<br/>
+
+{literal}
+
+<style type="text/css">
+<!--
+*{ padding: 0; margin: 0; }
+div{ padding: 4px 48px;}
+body{ background: #fff; font-family: "微软雅黑"; color: #333;font-size:24px}
+h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; }
+p{ line-height: 1.8em; font-size: 36px }
+.content{margin-left:100px;}
+-->
+</style>
+
+<div class="content">
+	__APP__
+    ThinkPhp4Tae基于ThinkPhp3.2，使用utf-8编码。了解：ThinkPhp3.2完全开发手册(http://document.thinkphp.cn/manual_3_2.html)<br />
+    应用配置：{应用目录}\Common\Conf\config.php<br />
+    默认开启调试控制台，在页面下方。关闭方法：修改配置 'SHOW_PAGE_TRACE'	=>	false<br />
+    Demo实现：{应用目录}\Home\Controller\IndexController.class.php<br />
+{/literal}
+    {foreach from=data item=i}
+        {$i}
+    {/foreach}
+    1. <a href="/?a=dbdemo">数据库访问Demo</a><br />
+    2. <a href="/?a=cachedemo">缓存服务Demo</a><br />
+    3. <a href="/?a=smartydemo">Smarty模板Demo</a><br />
+    4. <a href="/?a=filedemo">文件读写Demo</a><br />
+    5. <a href="/?a=logdemo">日志Demo</a><br />
+</div>
+<script type="text/javascript" src="/Public/debug.js"></script>
+
+
+<br/>
+下面是底部
+<br/>

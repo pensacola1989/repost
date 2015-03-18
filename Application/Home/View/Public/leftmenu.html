@@ -1,0 +1,36 @@
+﻿<script type='text/javascript'>
+    $(function(){
+    
+        var controller = '{$controller}'
+        var funName = '{$funName}';
+        var objDiv = $('.leftmenu li a').children();
+
+        if (controller == 'Index') {
+            objDiv.eq(0).attr('style', 'background:#1B73A1;');
+        } else {
+            objDiv.each(function(){
+                if ($(this).attr('rel') == funName) {
+                    $(this).attr('style', 'background:#1B73A1;').siblings().attr('style', '');
+                }
+            });
+        }
+
+        $('.leftmenu li a').children().mouseover(function(){
+            $(this).attr('class', 'leftmenuover').siblings().attr('class', 'leftmenuout');
+        });
+        $('.leftmenu li a').children().mouseout(function(){
+            $(this).attr('class', 'leftmenuout');
+        });
+    })
+</script>
+   <div id="ctl00_divLeftMenu" class="leftmenu shadow">
+    	<ul>
+        <foreach name="app" item = "vo">
+    		<li><a href='__APP__/{$vo.url}'>
+    			<div class="leftmenuout" rel="{$vo.alt}">{$vo.appName}</div>
+    			</a>
+    		</li>
+        </foreach>
+        </ul>
+    </div>
+

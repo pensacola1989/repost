@@ -1,0 +1,24 @@
+ <html>
+ <head>
+     <meta http-equiv="content-type" content="text/html; charset=utf-8">
+     <load href="__ROOT__/Public/Css/page.css" / > 
+
+     <script type="text/javascript" src='__ROOT__/Public/Js/jquery.js' charset="utf-8"></script>
+     <title>Index</title>
+ </head>
+ <body>
+     <table border="1" width="700px">
+         <th>用户名</th><th>密码</th><th>手机</th>
+         <foreach name='list.list' item='vo'>
+            <tr>
+                <td>{$vo.username}</td>
+                <td>{$vo.password}</td>
+                <td>{$vo.tel}</td>
+            </tr>
+         </foreach>
+         <tr width='600px'>
+            <td colspan='3'><div class="sabrosus">{$list.page}<div></td>
+         </tr>
+     </table>
+ </body>
+ </html>
