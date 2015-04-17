@@ -6,10 +6,32 @@
  * Time: 3:59 PM
  */
 use Think\Controller;
+use Home\Service\Task;
+use Home\Service\Queue;
+use Home\Service\TaskQueue;
 
 class WeiboController extends Controller {
 
     const APP_SECRET = '8d3b5c8fd40e0644347cc71b0bcedef7';
+
+    public function console()
+    {
+        $taskQueue = new TaskQueue();
+
+        $taskQueue
+            ->enqueue(new Task(1))
+            ->enqueue(new Task(2))
+            ->enqueue(new Task(3))
+            ->enqueue(new Task(4))
+            ->enqueue(new Task(5));
+
+        while ($taskQueue->getSize() != 0) {
+            $task = $taskQueue->getNextTask();
+            $task->run();
+
+            sleep(3);
+        }
+    }
 
     public function index()
     {
